@@ -24,6 +24,7 @@ class DocenteController extends Controller
         $radioButton = $request->get('tipo');
 
         //https://youtu.be/XeYd_kYkUJE
+
         $docentes = DB::table('docentes')
             ->select('id','nPersonal','nombre','apellidoPaterno','apellidoMaterno','email')
             ->where('nPersonal','LIKE','%'.$search.'%')
@@ -32,8 +33,9 @@ class DocenteController extends Controller
             ->orWhere('apellidoMaterno','LIKE','%'.$search.'%')
             ->orWhere('email','LIKE','%'.$search.'%')
             ->orderBy('apellidoPaterno','asc')
-            ->paginate(15);
-
+            ->paginate('10')
+            ->withQueryString()
+            ;
         if(isset($radioButton)){
 
             switch ($radioButton){
@@ -43,8 +45,10 @@ class DocenteController extends Controller
                         ->select('id','nPersonal','nombre','apellidoPaterno','apellidoMaterno','email')
                         ->where('nPersonal','LIKE','%'.$search.'%')
                         ->orderBy('nPersonal', 'asc')
-                        ->paginate(15)
-                    ;
+                        ->paginate(10)
+                        ->withQueryString()
+                        ;
+
                 break;
 
                 case "nombre":
@@ -52,8 +56,10 @@ class DocenteController extends Controller
                         ->select('id','nPersonal','nombre','apellidoPaterno','apellidoMaterno','email')
                         ->where('nombre','LIKE','%'.$search.'%')
                         ->orderBy('nombre', 'asc')
-                        ->paginate(15)
-                    ;
+                        ->paginate(10)
+                        ->withQueryString()
+                       ;
+
                 break;
 
                 case "apellidoPaterno":
@@ -61,8 +67,9 @@ class DocenteController extends Controller
                         ->select('id','nPersonal','nombre','apellidoPaterno','apellidoMaterno','email')
                         ->where('apellidoPaterno','LIKE','%'.$search.'%')
                         ->orderBy('apellidoPaterno', 'asc')
-                        ->paginate(15)
-                    ;
+                        ->paginate(10)
+                        ->withQueryString()
+                        ;
                 break;
 
                 case "apellidoMaterno":
@@ -70,8 +77,9 @@ class DocenteController extends Controller
                         ->select('id','nPersonal','nombre','apellidoPaterno','apellidoMaterno','email')
                         ->where('apellidoMaterno','LIKE','%'.$search.'%')
                         ->orderBy('apellidoMaterno', 'asc')
-                        ->paginate(15)
-                    ;
+                        ->paginate(10)
+                        ->withQueryString()
+                        ;
                 break;
 
                 case "email":
@@ -79,8 +87,9 @@ class DocenteController extends Controller
                         ->select('id','nPersonal','nombre','apellidoPaterno','apellidoMaterno','email')
                         ->where('email','LIKE','%'.$search.'%')
                         ->orderBy('email', 'asc')
-                        ->paginate(15)
-                    ;
+                        ->paginate(10)
+                        ->withQueryString()
+                        ;
                 break;
 
                 default:
@@ -92,7 +101,8 @@ class DocenteController extends Controller
                     ->orWhere('apellidoMaterno','LIKE','%'.$search.'%')
                     ->orWhere('email','LIKE','%'.$search.'%')
                     ->orderBy('nPersonal','asc')
-                    ->paginate(15)
+                    ->paginate(10)
+                    ->withQueryString()
                     ;
             }
 

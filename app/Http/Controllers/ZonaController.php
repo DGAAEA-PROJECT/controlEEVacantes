@@ -25,7 +25,9 @@ class ZonaController extends Controller
             ->select('id','nombre')
             ->where('nombre','LIKE','%'.$search.'%')
             ->orderBy('nombre','asc')
-            ->cursorPaginate(15);
+            ->paginate('10')
+            ->withQueryString()
+            ;
 
         return view('zona.index', compact('zonas','search'));
     }

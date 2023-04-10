@@ -29,7 +29,9 @@ class ExperienciaEducativaController extends Controller
             ->orWhere('nombre','LIKE','%'.$search.'%')
             ->orWhere('horas','LIKE','%'.$search.'%')
             ->orderBy('nombre','asc')
-            ->paginate(15);
+            ->paginate(10)
+            ->withQueryString()
+            ;
 
         if(isset($radioButton)){
 
@@ -40,7 +42,8 @@ class ExperienciaEducativaController extends Controller
                     ->select('id','numMateria','nrc','nombre','horas')
                     ->where('numMateria','LIKE','%'.$search.'%')
                     ->orderBy('numMateria', 'asc')
-                    ->paginate(15)
+                    ->paginate(10)
+                    ->withQueryString()
                     ;
                 break;
 
@@ -49,7 +52,8 @@ class ExperienciaEducativaController extends Controller
                     ->select('id','numMateria','nrc','nombre','horas')
                     ->where('nrc','LIKE','%'.$search.'%')
                     ->orderBy('nrc', 'asc')
-                    ->paginate(15)
+                    ->paginate(10)
+                    ->withQueryString()
                     ;
                 break;
 
@@ -58,7 +62,8 @@ class ExperienciaEducativaController extends Controller
                     ->select('id','numMateria','nrc','nombre','horas')
                     ->where('nombre','LIKE','%'.$search.'%')
                     ->orderBy('nombre', 'asc')
-                    ->paginate(15)
+                    ->paginate(10)
+                    ->withQueryString()
                     ;
                 break;
 
@@ -67,7 +72,8 @@ class ExperienciaEducativaController extends Controller
                     ->select('id','numMateria','nrc','nombre','horas')
                     ->where('horas','LIKE','%'.$search.'%')
                     ->orderBy('horas', 'asc')
-                    ->paginate(15)
+                    ->paginate(10)
+                    ->withQueryString()
                     ;
                 break;
 
@@ -79,7 +85,8 @@ class ExperienciaEducativaController extends Controller
                     ->orWhere('nombre','LIKE','%'.$search.'%')
                     ->orWhere('horas','LIKE','%'.$search.'%')
                     ->orderBy('nombre','asc')
-                    ->paginate(15)
+                    ->paginate(10)
+                    ->withQueryString()
                     ;
             }
 

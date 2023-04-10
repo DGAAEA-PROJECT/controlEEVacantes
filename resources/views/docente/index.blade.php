@@ -130,14 +130,14 @@
 
                         <td class="py-4 px-6">
                             {{$docente->apellidoPaterno}}
-                            
+
                         </td>
 
                         <td class="py-4 px-6">
                             {{$docente->apellidoMaterno}}
                         </td>
 
-                        <td class="py-4 px-6">                            
+                        <td class="py-4 px-6">
                             {{$docente->nombre}}
                         </td>
 
@@ -161,6 +161,7 @@
             @endif
             </tbody>
         </table>
+        {{ $docentes->links() }}
     </div>
 
 </div>

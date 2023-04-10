@@ -147,6 +147,7 @@
             @endif
             </tbody>
         </table>
+        {{ $experienciasEducativas->links() }}
     </div>
 
 </div>

@@ -27,6 +27,7 @@ class LogUserActivityController extends Controller
             ->orWhere('created_at','LIKE','%'.$search.'%')
             ->orderBy('created_at','desc')
             ->paginate(10)
+            ->withQueryString()
             ;
 
         if(isset($radioButton)){
@@ -38,8 +39,9 @@ class LogUserActivityController extends Controller
                         ->select('name', 'email','action','data','created_at')
                         ->where('created_at','LIKE','%'.$search.'%')
                         ->orderBy('created_at', 'desc')
-                        ->paginate(15)
-                    ;
+                        ->paginate(10)
+                        ->withQueryString()
+                        ;
                 break;
 
                 case "nombre":
@@ -47,8 +49,9 @@ class LogUserActivityController extends Controller
                         ->select('name', 'email','action','data','created_at')
                         ->where('name','LIKE','%'.$search.'%')
                         ->orderBy('name', 'asc')
-                        ->paginate(15)
-                    ;
+                        ->paginate(10)
+                        ->withQueryString()
+                        ;
                 break;
 
                 case "correo":
@@ -56,8 +59,9 @@ class LogUserActivityController extends Controller
                         ->select('name', 'email','action','data','created_at')
                         ->where('email','LIKE','%'.$search.'%')
                         ->orderBy('email', 'asc')
-                        ->paginate(15)
-                    ;
+                        ->paginate(10)
+                        ->withQueryString()
+                        ;
                 break;
 
                 case "accion":
@@ -65,8 +69,9 @@ class LogUserActivityController extends Controller
                         ->select('name', 'email','action','data','created_at')
                         ->where('action','LIKE','%'.$search.'%')
                         ->orderBy('action', 'asc')
-                        ->paginate(15)
-                    ;
+                        ->paginate(10)
+                        ->withQueryString()
+                        ;
                 break;
 
                 case "cambios":
@@ -74,8 +79,9 @@ class LogUserActivityController extends Controller
                         ->select('name', 'email','action','data','created_at')
                         ->where('data','LIKE','%'.$search.'%')
                         ->orderBy('data', 'asc')
-                        ->paginate(15)
-                    ;
+                        ->paginate(10)
+                        ->withQueryString()
+                        ;
                 break;
 
                 default:
@@ -86,8 +92,9 @@ class LogUserActivityController extends Controller
                         ->orWhere('data','LIKE','%'.$search.'%')
                         ->orWhere('created_at','LIKE','%'.$search.'%')
                         ->orderBy('created_at','desc')
-                        ->paginate(15)
-                    ;
+                        ->paginate(10)
+                        ->withQueryString()
+                        ;
 
             }
 
