@@ -14,7 +14,9 @@ class ExperienciaEducativaController extends Controller
 {
     /**
      * Display a listing of the resource.
-     *
+     * Función usada para mostrar a las experiencias educativas y su respectiva información
+     * Usada en la vista zonaDependenciaPrograma.index
+     * @see resources/views/zonaDependenciaPrograma/index.blade.php
      * @return \Illuminate\Http\Response
      */
     public function index(Request $request)
@@ -97,7 +99,7 @@ class ExperienciaEducativaController extends Controller
 
     /**
      * Show the form for creating a new resource.
-     *
+     * Muestra el formulario para crear una nueva experiencia educativa
      * @return \Illuminate\Http\Response
      */
     public function create()
@@ -107,7 +109,7 @@ class ExperienciaEducativaController extends Controller
 
     /**
      * Store a newly created resource in storage.
-     *
+     * Crea una nueva experiencia educativa
      * @param  \App\Http\Requests\StoreExperienciaEducativaRequest  $request
      * @return \Illuminate\Http\Response
      */
@@ -143,7 +145,7 @@ class ExperienciaEducativaController extends Controller
 
     /**
      * Show the form for editing the specified resource.
-     *
+     * Muestra el formulario para actualizar una experiencia educativa
      * @param  \App\Models\ExperienciaEducativa  $experienciaEducativa
      * @return \Illuminate\Http\Response
      */
@@ -158,6 +160,7 @@ class ExperienciaEducativaController extends Controller
 
     /**
      * Update the specified resource in storage.
+     * Actaliza la experiencia educativa
      *
      * @param  \App\Http\Requests\UpdateExperienciaEducativaRequest  $request
      * @param  \App\Models\ExperienciaEducativa  $experienciaEducativa
