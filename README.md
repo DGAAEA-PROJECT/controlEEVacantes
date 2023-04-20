@@ -65,7 +65,7 @@ Para realizar el despliegue o deployment se optó por Azure, debido a que Azure 
 - [Lista de casos de uso, diagrama entidad - asociación y diagrama de clases ](https://drive.google.com/file/d/1FfCBYKxhVCDCc5jiQlSBOeNFUO6XY7JP/view?usp=sharing)
 - [Descripción de casos de uso](https://drive.google.com/drive/folders/1gxtZjq4dU8hbj77NAcJ9jzURyuYFoI9l?usp=sharing)
 
-## Video Tutorailes
+## Video Tutoriales
 
 - Videos para DGAAEA: https://www.youtube.com/playlist?list=PLkQwTdgiXHj6h7KiC7hZ-0h7h4IagCzxE
 - Videos para Facultad: https://www.youtube.com/playlist?list=PLkQwTdgiXHj5o4CIYSaXVx2xOz9XmSzxQ 
