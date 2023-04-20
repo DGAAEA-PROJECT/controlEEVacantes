@@ -25,8 +25,7 @@ class PeriodoController extends Controller
             ->orWhere('clavePeriodo','LIKE','%'.$search.'%')
             ->orWhere('descripcion','LIKE','%'.$search.'%')
             ->paginate(10)
-            ->withQueryString()
-            ;
+        ;
 
         if(isset($radioButton)){
 
@@ -37,9 +36,8 @@ class PeriodoController extends Controller
                         ->select('id','nPeriodo', 'clavePeriodo','descripcion')
                         ->where('nPeriodo','LIKE','%'.$search.'%')
                         ->orderBy('nPeriodo', 'desc')
-                        ->paginate(10)
-                        ->withQueryString()
-                        ;
+                        ->paginate(15)
+                    ;
                     break;
 
                 case "clavePeriodo":
@@ -47,9 +45,8 @@ class PeriodoController extends Controller
                         ->select('id','nPeriodo', 'clavePeriodo','descripcion','actual')
                         ->where('clavePeriodo','LIKE','%'.$search.'%')
                         ->orderBy('clavePeriodo', 'desc')
-                        ->paginate(10)
-                        ->withQueryString()
-                        ;
+                        ->paginate(15)
+                    ;
                     break;
 
                 case "descripcion":
@@ -57,9 +54,8 @@ class PeriodoController extends Controller
                         ->select('id','nPeriodo', 'clavePeriodo','descripcion','actual')
                         ->where('descripcion','LIKE','%'.$search.'%')
                         ->orderBy('descripcion', 'desc')
-                        ->paginate(10)
-                        ->withQueryString()
-                        ;
+                        ->paginate(15)
+                    ;
                     break;
 
                 default:
@@ -69,8 +65,7 @@ class PeriodoController extends Controller
                         ->orWhere('clavePeriodo','LIKE','%'.$search.'%')
                         ->orWhere('descripcion','LIKE','%'.$search.'%')
                         ->paginate(10)
-                        ->withQueryString()
-                        ;
+                    ;
 
             }
 

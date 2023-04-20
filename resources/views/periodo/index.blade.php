@@ -158,7 +158,6 @@
             @endif
             </tbody>
         </table>
-        {{ $periodos->links() }}
     </div>
 
 </div>

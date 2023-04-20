@@ -36,9 +36,7 @@ class ZonaDependenciaProgramaController extends Controller
             ->orWhere('horasUtilizadas','LIKE','%'.$search.'%')
             ->orWhere('horasDisponibles','LIKE','%'.$search.'%')
             ->orderBy('id_zona','asc')
-            ->paginate(15)
-            ->withQueryString()
-            ;
+            ->paginate(15);
 
         return view('zonaDependenciaPrograma.index', compact('listaZonaDependenciaPrograma','search'));
     }

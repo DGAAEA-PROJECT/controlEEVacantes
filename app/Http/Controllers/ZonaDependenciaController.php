@@ -36,9 +36,7 @@ class ZonaDependenciaController extends Controller
             ->orWhere('clave_dependencia','LIKE','%'.$search.'%')
             ->orWhere('nombre_dependencia','LIKE','%'.$search.'%')
             ->orderBy('id_zona','asc')
-            ->paginate(10)
-            ->withQueryString()
-            ;
+            ->paginate(15);
 
         if(isset($radioButton)){
 
@@ -49,9 +47,8 @@ class ZonaDependenciaController extends Controller
                         ->select('id','id_zona','nombre_zona','clave_dependencia','nombre_dependencia')
                         ->where('id_zona','LIKE','%'.$search.'%')
                         ->orderBy('id_zona', 'asc')
-                        ->paginate(10)
-                        ->withQueryString()
-                        ;
+                        ->paginate(15)
+                    ;
                     break;
 
                 case "nombreZona":
@@ -59,9 +56,8 @@ class ZonaDependenciaController extends Controller
                         ->select('id','id_zona','nombre_zona','clave_dependencia','nombre_dependencia')
                         ->where('nombre_zona','LIKE','%'.$search.'%')
                         ->orderBy('nombre_zona', 'asc')
-                        ->paginate(10)
-                        ->withQueryString()
-                        ;
+                        ->paginate(15)
+                    ;
                     break;
 
                 case "claveDependencia":
@@ -69,9 +65,8 @@ class ZonaDependenciaController extends Controller
                         ->select('id','id_zona','nombre_zona','clave_dependencia','nombre_dependencia')
                         ->where('clave_dependencia','LIKE','%'.$search.'%')
                         ->orderBy('clave_dependencia', 'asc')
-                        ->paginate(10)
-                        ->withQueryString()
-                        ;
+                        ->paginate(15)
+                    ;
                     break;
 
                 case "nombreDependencia":
@@ -79,9 +74,8 @@ class ZonaDependenciaController extends Controller
                         ->select('id','id_zona','nombre_zona','clave_dependencia','nombre_dependencia')
                         ->where('nombre_dependencia','LIKE','%'.$search.'%')
                         ->orderBy('nombre_dependencia', 'asc')
-                        ->paginate(10)
-                        ->withQueryString()
-                        ;
+                        ->paginate(15)
+                    ;
                     break;
 
                 default:
@@ -92,9 +86,8 @@ class ZonaDependenciaController extends Controller
                         ->orWhere('clave_dependencia','LIKE','%'.$search.'%')
                         ->orWhere('nombre_dependencia','LIKE','%'.$search.'%')
                         ->orderBy('id_zona','asc')
-                        ->paginate(10)
-                        ->withQueryString()
-                        ;
+                        ->paginate(15)
+                    ;
             }
 
         }

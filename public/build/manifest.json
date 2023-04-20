@@ -1,0 +1,22 @@
+{
+  "resources/js/app.js": {
+    "file": "assets/app.a047f3e6.js",
+    "src": "resources/js/app.js",
+    "isEntry": true
+  },
+  "node_modules/flowbite/dist/flowbite.js": {
+    "file": "assets/flowbite.2902e062.js",
+    "src": "node_modules/flowbite/dist/flowbite.js",
+    "isEntry": true
+  },
+  "node_modules/flowbite/dist/datepicker.js": {
+    "file": "assets/datepicker.7acacb08.js",
+    "src": "node_modules/flowbite/dist/datepicker.js",
+    "isEntry": true
+  },
+  "resources/css/app.css": {
+    "file": "assets/app.c7f178c4.css",
+    "src": "resources/css/app.css",
+    "isEntry": true
+  }
+}

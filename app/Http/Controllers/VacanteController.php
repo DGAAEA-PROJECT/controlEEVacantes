@@ -127,7 +127,7 @@ class VacanteController extends Controller
                             ->where('numZona','=',$zona)
                             ->where('numDependencia','=',$dependencia);
                     })
-                    ->paginate('10')
+                    ->paginate('15')
                 ;
 
             }else{

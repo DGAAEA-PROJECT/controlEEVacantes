@@ -28,9 +28,7 @@ class MotivoController extends Controller
             ->orWhere('nombre','LIKE','%'.$search.'%')
             ->orWhere('concepto','LIKE','%'.$search.'%')
             ->orderBy('numeroMotivo','asc')
-            ->paginate(10)
-            ->withQueryString()
-            ;
+            ->paginate(15);
 
         if(isset($radioButton)){
 
@@ -41,9 +39,8 @@ class MotivoController extends Controller
                         ->select('id','numeroMotivo','nombre','concepto')
                         ->where('numeroMotivo','LIKE','%'.$search.'%')
                         ->orderBy('numeroMotivo', 'asc')
-                        ->paginate(10)
-                        ->withQueryString()
-                        ;
+                        ->paginate(15)
+                    ;
                     break;
 
                 case "nombre":
@@ -51,9 +48,8 @@ class MotivoController extends Controller
                         ->select('id','numeroMotivo','nombre','concepto')
                         ->where('nombre','LIKE','%'.$search.'%')
                         ->orderBy('nombre', 'asc')
-                        ->paginate(10)
-                        ->withQueryString()
-                        ;
+                        ->paginate(15)
+                    ;
                     break;
 
                 case "concepto":
@@ -61,9 +57,8 @@ class MotivoController extends Controller
                         ->select('id','numeroMotivo','nombre','concepto')
                         ->where('concepto','LIKE','%'.$search.'%')
                         ->orderBy('concepto', 'asc')
-                        ->paginate(10)
-                        ->withQueryString()
-                        ;
+                        ->paginate(15)
+                    ;
                     break;
 
                 default:
@@ -73,9 +68,8 @@ class MotivoController extends Controller
                         ->orWhere('nombre','LIKE','%'.$search.'%')
                         ->orWhere('concepto','LIKE','%'.$search.'%')
                         ->orderBy('numeroMotivo','asc')
-                        ->paginate(10)
-                        ->withQueryString()
-                        ;
+                        ->paginate(15)
+                    ;
             }
 
         }
