@@ -63,7 +63,6 @@ class ProcessCSVUploadVacante implements ShouldQueue
                     'fechaApertura' => $row[21],
                     'fechaCierre' => $row[22],
                     'fechaRenuncia' => $row[23],
-                    'archivo' => $row[24],
                 ],
 
             );
