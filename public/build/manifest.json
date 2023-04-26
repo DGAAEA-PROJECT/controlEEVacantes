@@ -1,6 +1,6 @@
 {
   "resources/js/app.js": {
-    "file": "assets/app.a047f3e6.js",
+    "file": "assets/app.985b7390.js",
     "src": "resources/js/app.js",
     "isEntry": true
   },
@@ -10,7 +10,7 @@
     "isEntry": true
   },
   "node_modules/flowbite/dist/datepicker.js": {
-    "file": "assets/datepicker.7acacb08.js",
+    "file": "assets/datepicker.5b91ade3.js",
     "src": "node_modules/flowbite/dist/datepicker.js",
     "isEntry": true
   },
