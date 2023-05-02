@@ -27,7 +27,7 @@
 
             @if ( Auth::user()->hasTeamRole(auth()->user()->currentTeam, 'admin') )
 
-            <a target="_blank" href="https://drive.google.com/file/d/1I7EJW_xLWJZ4B2n_fO6GQIQFU18OFGI2/view?usp=sharing">
+            <a target="_blank" href="https://drive.google.com/file/d/1I7EJW_xLWJZ4B2n_fO6GQIQFU18OFGI2/view?usp=share_link">
                 <div class="mt-3 flex items-center text-sm font-semibold text-indigo-700">
                         <div>Explora el manual de usuario</div>
 
@@ -39,7 +39,7 @@
 
             @else
 
-                <a target="_blank" href="https://drive.google.com/file/d/14MjPauCm6zkTF1ONWBT_ORDJP-Z1rHos/view?usp=sharing">
+                <a target="_blank" href="https://drive.google.com/file/d/14MjPauCm6zkTF1ONWBT_ORDJP-Z1rHos/view?usp=share_link">
                     <div class="mt-3 flex items-center text-sm font-semibold text-indigo-700">
                         <div>Explora el manual de usuario</div>
 
