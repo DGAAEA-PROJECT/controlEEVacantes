@@ -9,7 +9,7 @@ Control de Experiencias Educativas Vacantes
 ## Descripción
 
 <p align="justify">
-El sitio web auxiliará al Área Académica Económico - Administrativa en el proceso de la gestión del control de las experiencias educativas vacantes, solicitadas por las diversas dependencias pertenecientes al área a lo largo del semestre.
+El sitio web auxiliará al Área Académica Económico - Administrativa en el proceso de la gestión del control de las experiencias educativas vacantes, solicitadas por las distintas dependencias pertenecientes al área a lo largo del semestre.
 </p>
 
 ## Requisitos
@@ -50,7 +50,7 @@ Una vez clonado el repositorio deberas hacer lo siguiente:
 ## Flowbite
 
 [Flowbite](https://flowbite.com/docs/getting-started/introduction/) es un plugin que puede ser incluido en los proyectos de Tailwind.
-Flowbite fue usada para la creación de componentes en las vistas de la aplicación.
+Flowbite fue usada para la creación de componentes en las vistas de la aplicación. 
 
 ## Despliegue
 
