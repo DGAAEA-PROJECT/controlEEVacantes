@@ -29,7 +29,7 @@ class TipoAsignacionController extends Controller
             ->orderBy('tipo','asc')
             ->paginate(10)
             ->withQueryString()
-            ;
+        ;
 
         if(isset($radioButton)){
 
@@ -42,7 +42,7 @@ class TipoAsignacionController extends Controller
                         ->orderBy('tipo', 'asc')
                         ->paginate(10)
                         ->withQueryString()
-                        ;
+                    ;
                     break;
 
                 case "descripcion":
@@ -63,7 +63,7 @@ class TipoAsignacionController extends Controller
                         ->orderBy('tipo','asc')
                         ->paginate(10)
                         ->withQueryString()
-                        ;
+                    ;
             }
 
         }
@@ -173,4 +173,3 @@ class TipoAsignacionController extends Controller
     }
 
 }
-
