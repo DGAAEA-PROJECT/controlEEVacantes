@@ -87,7 +87,7 @@
                         <div class="gap-6">
                             <a class="font-medium text-blue-600 underline dark:text-blue-500 hover:no-underline"
                                target="_blank"
-                               href="https://filesdgaaea.blob.core.windows.net/files/{{$file["name"]}}">{{$file["name"]}}
+                               href="https://gestionvacantes.blob.core.windows.net/files/{{$file["name"]}}">{{$file["name"]}}
                             </a>
                                 <?php
                                 $archivo = $file["name"];
@@ -380,7 +380,7 @@
                                         <div class="gap-6">
                                             <a class="font-medium text-blue-600 underline dark:text-blue-500 hover:no-underline"
                                                target="_blank"
-                                               href="https://filesdgaaea.blob.core.windows.net/files/{{$file["name"]}}">{{$file["name"]}}
+                                               href="https://gestionvacantes.blob.core.windows.net/files/{{$file["name"]}}">{{$file["name"]}}
                                             </a>
                                             <br>
                                         </div>
