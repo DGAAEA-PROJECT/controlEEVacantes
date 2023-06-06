@@ -14,7 +14,9 @@ class ExperienciaEducativaController extends Controller
 {
     /**
      * Display a listing of the resource.
-     *
+     * Función usada para mostrar a las experiencias educativas y su respectiva información
+     * Usada en la vista zonaDependenciaPrograma.index
+     * @see resources/views/zonaDependenciaPrograma/index.blade.php
      * @return \Illuminate\Http\Response
      */
     public function index(Request $request)
@@ -29,7 +31,9 @@ class ExperienciaEducativaController extends Controller
             ->orWhere('nombre','LIKE','%'.$search.'%')
             ->orWhere('horas','LIKE','%'.$search.'%')
             ->orderBy('nombre','asc')
-            ->paginate(15);
+            ->paginate(10)
+            ->withQueryString()
+        ;
 
         if(isset($radioButton)){
 
@@ -37,49 +41,54 @@ class ExperienciaEducativaController extends Controller
 
                 case "numMateria":
                     $experienciasEducativas = DB::table('experiencia_educativas')
-                    ->select('id','numMateria','nrc','nombre','horas')
-                    ->where('numMateria','LIKE','%'.$search.'%')
-                    ->orderBy('numMateria', 'asc')
-                    ->paginate(15)
+                        ->select('id','numMateria','nrc','nombre','horas')
+                        ->where('numMateria','LIKE','%'.$search.'%')
+                        ->orderBy('numMateria', 'asc')
+                        ->paginate(10)
+                        ->withQueryString()
                     ;
-                break;
+                    break;
 
                 case "nrc":
                     $experienciasEducativas = DB::table('experiencia_educativas')
-                    ->select('id','numMateria','nrc','nombre','horas')
-                    ->where('nrc','LIKE','%'.$search.'%')
-                    ->orderBy('nrc', 'asc')
-                    ->paginate(15)
+                        ->select('id','numMateria','nrc','nombre','horas')
+                        ->where('nrc','LIKE','%'.$search.'%')
+                        ->orderBy('nrc', 'asc')
+                        ->paginate(10)
+                        ->withQueryString()
                     ;
-                break;
+                    break;
 
                 case "nombre":
                     $experienciasEducativas = DB::table('experiencia_educativas')
-                    ->select('id','numMateria','nrc','nombre','horas')
-                    ->where('nombre','LIKE','%'.$search.'%')
-                    ->orderBy('nombre', 'asc')
-                    ->paginate(15)
+                        ->select('id','numMateria','nrc','nombre','horas')
+                        ->where('nombre','LIKE','%'.$search.'%')
+                        ->orderBy('nombre', 'asc')
+                        ->paginate(10)
+                        ->withQueryString()
                     ;
-                break;
+                    break;
 
                 case "horas":
                     $experienciasEducativas = DB::table('experiencia_educativas')
-                    ->select('id','numMateria','nrc','nombre','horas')
-                    ->where('horas','LIKE','%'.$search.'%')
-                    ->orderBy('horas', 'asc')
-                    ->paginate(15)
+                        ->select('id','numMateria','nrc','nombre','horas')
+                        ->where('horas','LIKE','%'.$search.'%')
+                        ->orderBy('horas', 'asc')
+                        ->paginate(10)
+                        ->withQueryString()
                     ;
-                break;
+                    break;
 
                 default:
                     $experienciasEducativas = DB::table('experiencia_educativas')
-                    ->select('id','numMateria','nrc','nombre','horas')
+                        ->select('id','numMateria','nrc','nombre','horas')
                         ->where('numMateria','LIKE','%'.$search.'%')
-                    ->orWhere('nrc','LIKE','%'.$search.'%')
-                    ->orWhere('nombre','LIKE','%'.$search.'%')
-                    ->orWhere('horas','LIKE','%'.$search.'%')
-                    ->orderBy('nombre','asc')
-                    ->paginate(15)
+                        ->orWhere('nrc','LIKE','%'.$search.'%')
+                        ->orWhere('nombre','LIKE','%'.$search.'%')
+                        ->orWhere('horas','LIKE','%'.$search.'%')
+                        ->orderBy('nombre','asc')
+                        ->paginate(10)
+                        ->withQueryString()
                     ;
             }
 
@@ -90,7 +99,7 @@ class ExperienciaEducativaController extends Controller
 
     /**
      * Show the form for creating a new resource.
-     *
+     * Muestra el formulario para crear una nueva experiencia educativa
      * @return \Illuminate\Http\Response
      */
     public function create()
@@ -100,7 +109,7 @@ class ExperienciaEducativaController extends Controller
 
     /**
      * Store a newly created resource in storage.
-     *
+     * Crea una nueva experiencia educativa
      * @param  \App\Http\Requests\StoreExperienciaEducativaRequest  $request
      * @return \Illuminate\Http\Response
      */
@@ -136,7 +145,7 @@ class ExperienciaEducativaController extends Controller
 
     /**
      * Show the form for editing the specified resource.
-     *
+     * Muestra el formulario para actualizar una experiencia educativa
      * @param  \App\Models\ExperienciaEducativa  $experienciaEducativa
      * @return \Illuminate\Http\Response
      */
@@ -151,6 +160,7 @@ class ExperienciaEducativaController extends Controller
 
     /**
      * Update the specified resource in storage.
+     * Actaliza la experiencia educativa
      *
      * @param  \App\Http\Requests\UpdateExperienciaEducativaRequest  $request
      * @param  \App\Models\ExperienciaEducativa  $experienciaEducativa

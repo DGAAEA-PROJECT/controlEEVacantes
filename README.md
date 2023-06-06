@@ -9,7 +9,7 @@ Control de Experiencias Educativas Vacantes
 ## Descripción
 
 <p align="justify">
-El sitio web auxiliará al Área Académica Económico - Administrativa en el proceso de la gestión del control de las experiencias educativas vacantes, solicitadas por las distintas dependencias pertenecientes al área a lo largo del semestre.
+El sitio web auxiliará al Área Académica Económico - Administrativa en el proceso de la gestión del control de las experiencias educativas vacantes, solicitadas por las diversas dependencias pertenecientes al área a lo largo del semestre.
 </p>
 
 ## Requisitos
@@ -23,18 +23,18 @@ El sitio web auxiliará al Área Académica Económico - Administrativa en el pr
 - [Git](https://git-scm.com/downloads)
 - [Composer](https://getcomposer.org/download/)
 
-###### Ayuda adicional 
+###### Ayuda adicional
 [Cómo instalar y configurar SQL Server 2019](https://youtu.be/YOaC_TyOrdk)
 [Conectando SQLServer con Laravel](https://www.youtube.com/watch?v=Poj5Kz6zZIA)
 
-##### Opcional 
+##### Opcional
 - [PhpStorm](https://www.jetbrains.com/es-es/phpstorm/)
 
 ## Clonando el repositorio
 
 Una vez clonado el repositorio deberas hacer lo siguiente:
 
-1. Copiar el archivo env.example y renombrarlo como .env 
+1. Copiar el archivo env.example y renombrarlo como .env
 2. Ejecutar<b><i>php artisan key:generate</i></b>
 3. Instalar las dependencias de composer ejecutando <b><i>composer install</i></b>
 4. Instalar las dependencias de NPM ejecutando <b><i>npm install</i></b>
@@ -43,14 +43,14 @@ Una vez clonado el repositorio deberas hacer lo siguiente:
 7. Iniciar el servidor de Laravel ejecutando <b><i>php artisan serve</i></b>
 8. Iniciar el servidor de Node ejecutando <b><i>npm run dev</i></b>
 
-###### Ayuda adicional 
+###### Ayuda adicional
 [Introducción a Artisan](https://laravel.com/docs/9.x/artisan#introduction)
 [Comandos básicos de Artisan](https://jrgonzalez.es/guia-comandos-artisan)
 
 ## Flowbite
 
 [Flowbite](https://flowbite.com/docs/getting-started/introduction/) es un plugin que puede ser incluido en los proyectos de Tailwind.
-Flowbite fue usada para la creación de componentes en las vistas de la aplicación. 
+Flowbite fue usada para la creación de componentes en las vistas de la aplicación.
 
 ## Despliegue
 
@@ -65,3 +65,7 @@ Para realizar el despliegue o deployment se optó por Azure, debido a que Azure 
 - [Lista de casos de uso, diagrama entidad - asociación y diagrama de clases ](https://drive.google.com/file/d/1FfCBYKxhVCDCc5jiQlSBOeNFUO6XY7JP/view?usp=sharing)
 - [Descripción de casos de uso](https://drive.google.com/drive/folders/1gxtZjq4dU8hbj77NAcJ9jzURyuYFoI9l?usp=sharing)
 
+## Video Tutoriales
+
+- Videos para DGAAEA: https://www.youtube.com/playlist?list=PLkQwTdgiXHj6h7KiC7hZ-0h7h4IagCzxE
+- Videos para Facultad: https://www.youtube.com/playlist?list=PLkQwTdgiXHj5o4CIYSaXVx2xOz9XmSzxQ 

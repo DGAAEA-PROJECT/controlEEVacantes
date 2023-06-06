@@ -36,7 +36,9 @@ class ZonaDependenciaController extends Controller
             ->orWhere('clave_dependencia','LIKE','%'.$search.'%')
             ->orWhere('nombre_dependencia','LIKE','%'.$search.'%')
             ->orderBy('id_zona','asc')
-            ->paginate(15);
+            ->paginate(10)
+            ->withQueryString()
+        ;
 
         if(isset($radioButton)){
 
@@ -47,7 +49,8 @@ class ZonaDependenciaController extends Controller
                         ->select('id','id_zona','nombre_zona','clave_dependencia','nombre_dependencia')
                         ->where('id_zona','LIKE','%'.$search.'%')
                         ->orderBy('id_zona', 'asc')
-                        ->paginate(15)
+                        ->paginate(10)
+                        ->withQueryString()
                     ;
                     break;
 
@@ -56,7 +59,8 @@ class ZonaDependenciaController extends Controller
                         ->select('id','id_zona','nombre_zona','clave_dependencia','nombre_dependencia')
                         ->where('nombre_zona','LIKE','%'.$search.'%')
                         ->orderBy('nombre_zona', 'asc')
-                        ->paginate(15)
+                        ->paginate(10)
+                        ->withQueryString()
                     ;
                     break;
 
@@ -65,7 +69,8 @@ class ZonaDependenciaController extends Controller
                         ->select('id','id_zona','nombre_zona','clave_dependencia','nombre_dependencia')
                         ->where('clave_dependencia','LIKE','%'.$search.'%')
                         ->orderBy('clave_dependencia', 'asc')
-                        ->paginate(15)
+                        ->paginate(10)
+                        ->withQueryString()
                     ;
                     break;
 
@@ -74,7 +79,8 @@ class ZonaDependenciaController extends Controller
                         ->select('id','id_zona','nombre_zona','clave_dependencia','nombre_dependencia')
                         ->where('nombre_dependencia','LIKE','%'.$search.'%')
                         ->orderBy('nombre_dependencia', 'asc')
-                        ->paginate(15)
+                        ->paginate(10)
+                        ->withQueryString()
                     ;
                     break;
 
@@ -86,7 +92,8 @@ class ZonaDependenciaController extends Controller
                         ->orWhere('clave_dependencia','LIKE','%'.$search.'%')
                         ->orWhere('nombre_dependencia','LIKE','%'.$search.'%')
                         ->orderBy('id_zona','asc')
-                        ->paginate(15)
+                        ->paginate(10)
+                        ->withQueryString()
                     ;
             }
 
@@ -108,9 +115,9 @@ class ZonaDependenciaController extends Controller
 
         return view('zonaDependencia.create',
             [
-            'user' => $user,
-            'zonas' => $listaZonas,
-        ]);
+                'user' => $user,
+                'zonas' => $listaZonas,
+            ]);
     }
 
     /**
@@ -169,9 +176,9 @@ class ZonaDependenciaController extends Controller
         $dependencia = Zona_Dependencia::where('id',$id)->firstOrFail();
         $listaZonas = Zona::all();
         return view('zonaDependencia.edit', ['dependencia' => $dependencia,
-                                                  'zonas' => $listaZonas,
-                                                  'nombreZona' => $nombreZona
-                                                ]);
+            'zonas' => $listaZonas,
+            'nombreZona' => $nombreZona
+        ]);
 
     }
 
@@ -234,7 +241,7 @@ class ZonaDependenciaController extends Controller
     public function fetchDependencia(Request $request)
     {
         $data['dependencias'] = Zona_Dependencia::where("id_zona", $request->id_zona)
-                                ->get(["clave_dependencia","nombre_dependencia"]);
+            ->get(["clave_dependencia","nombre_dependencia"]);
 
         return response()->json($data);
     }
@@ -258,10 +265,11 @@ class ZonaDependenciaController extends Controller
 
         $listaVacantes = Vacante::where('numDependencia',$id)
             ->where(function ($query) use ($periodoActual){
-            $query->whereNull('deleted_at')
-                ->where('clavePeriodo',$periodoActual);
-        })
+                $query->whereNull('deleted_at')
+                    ->where('clavePeriodo',$periodoActual);
+            })
             ->where(function ($query) {
+                //$query->whereNull('numPersonalDocente');
                 $query->where('nombreDocente','');
             })
             ->get();

@@ -27,7 +27,8 @@ class LogUserActivityController extends Controller
             ->orWhere('created_at','LIKE','%'.$search.'%')
             ->orderBy('created_at','desc')
             ->paginate(10)
-            ;
+            ->withQueryString()
+        ;
 
         if(isset($radioButton)){
 
@@ -38,45 +39,50 @@ class LogUserActivityController extends Controller
                         ->select('name', 'email','action','data','created_at')
                         ->where('created_at','LIKE','%'.$search.'%')
                         ->orderBy('created_at', 'desc')
-                        ->paginate(15)
+                        ->paginate(10)
+                        ->withQueryString()
                     ;
-                break;
+                    break;
 
                 case "nombre":
                     $bitacora = DB::table('log_user_activity')
                         ->select('name', 'email','action','data','created_at')
                         ->where('name','LIKE','%'.$search.'%')
                         ->orderBy('name', 'asc')
-                        ->paginate(15)
+                        ->paginate(10)
+                        ->withQueryString()
                     ;
-                break;
+                    break;
 
                 case "correo":
                     $bitacora = DB::table('log_user_activity')
                         ->select('name', 'email','action','data','created_at')
                         ->where('email','LIKE','%'.$search.'%')
                         ->orderBy('email', 'asc')
-                        ->paginate(15)
+                        ->paginate(10)
+                        ->withQueryString()
                     ;
-                break;
+                    break;
 
                 case "accion":
                     $bitacora = DB::table('log_user_activity')
                         ->select('name', 'email','action','data','created_at')
                         ->where('action','LIKE','%'.$search.'%')
                         ->orderBy('action', 'asc')
-                        ->paginate(15)
+                        ->paginate(10)
+                        ->withQueryString()
                     ;
-                break;
+                    break;
 
                 case "cambios":
                     $bitacora = DB::table('log_user_activity')
                         ->select('name', 'email','action','data','created_at')
                         ->where('data','LIKE','%'.$search.'%')
                         ->orderBy('data', 'asc')
-                        ->paginate(15)
+                        ->paginate(10)
+                        ->withQueryString()
                     ;
-                break;
+                    break;
 
                 default:
                     $bitacora = DB::table('log_user_activity')
@@ -86,7 +92,8 @@ class LogUserActivityController extends Controller
                         ->orWhere('data','LIKE','%'.$search.'%')
                         ->orWhere('created_at','LIKE','%'.$search.'%')
                         ->orderBy('created_at','desc')
-                        ->paginate(15)
+                        ->paginate(10)
+                        ->withQueryString()
                     ;
 
             }

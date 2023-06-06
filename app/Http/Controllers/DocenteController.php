@@ -6,7 +6,6 @@ use App\Models\Docente;
 use App\Http\Requests\StoreDocenteRequest;
 use App\Http\Requests\UpdateDocenteRequest;
 use App\Providers\LogUserActivity;
-use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -15,6 +14,9 @@ class DocenteController extends Controller
 {
     /**
      * Display a listing of the resource.
+     * Función usada para mostrar los docentes y su respectiva información
+     * Usada en la vista docente.index
+     * @see resources/views/docente/index.blade.php
      *
      * @return \Illuminate\Http\Response
      */
@@ -24,6 +26,7 @@ class DocenteController extends Controller
         $radioButton = $request->get('tipo');
 
         //https://youtu.be/XeYd_kYkUJE
+
         $docentes = DB::table('docentes')
             ->select('id','nPersonal','nombre','apellidoPaterno','apellidoMaterno','email')
             ->where('nPersonal','LIKE','%'.$search.'%')
@@ -32,8 +35,9 @@ class DocenteController extends Controller
             ->orWhere('apellidoMaterno','LIKE','%'.$search.'%')
             ->orWhere('email','LIKE','%'.$search.'%')
             ->orderBy('apellidoPaterno','asc')
-            ->paginate(15);
-
+            ->paginate('10')
+            ->withQueryString()
+        ;
         if(isset($radioButton)){
 
             switch ($radioButton){
@@ -43,56 +47,64 @@ class DocenteController extends Controller
                         ->select('id','nPersonal','nombre','apellidoPaterno','apellidoMaterno','email')
                         ->where('nPersonal','LIKE','%'.$search.'%')
                         ->orderBy('nPersonal', 'asc')
-                        ->paginate(15)
+                        ->paginate(10)
+                        ->withQueryString()
                     ;
-                break;
+
+                    break;
 
                 case "nombre":
                     $docentes = DB::table('docentes')
                         ->select('id','nPersonal','nombre','apellidoPaterno','apellidoMaterno','email')
                         ->where('nombre','LIKE','%'.$search.'%')
                         ->orderBy('nombre', 'asc')
-                        ->paginate(15)
+                        ->paginate(10)
+                        ->withQueryString()
                     ;
-                break;
+
+                    break;
 
                 case "apellidoPaterno":
                     $docentes = DB::table('docentes')
                         ->select('id','nPersonal','nombre','apellidoPaterno','apellidoMaterno','email')
                         ->where('apellidoPaterno','LIKE','%'.$search.'%')
                         ->orderBy('apellidoPaterno', 'asc')
-                        ->paginate(15)
+                        ->paginate(10)
+                        ->withQueryString()
                     ;
-                break;
+                    break;
 
                 case "apellidoMaterno":
                     $docentes = DB::table('docentes')
                         ->select('id','nPersonal','nombre','apellidoPaterno','apellidoMaterno','email')
                         ->where('apellidoMaterno','LIKE','%'.$search.'%')
                         ->orderBy('apellidoMaterno', 'asc')
-                        ->paginate(15)
+                        ->paginate(10)
+                        ->withQueryString()
                     ;
-                break;
+                    break;
 
                 case "email":
                     $docentes = DB::table('docentes')
                         ->select('id','nPersonal','nombre','apellidoPaterno','apellidoMaterno','email')
                         ->where('email','LIKE','%'.$search.'%')
                         ->orderBy('email', 'asc')
-                        ->paginate(15)
+                        ->paginate(10)
+                        ->withQueryString()
                     ;
-                break;
+                    break;
 
                 default:
                     $docentes = DB::table('docentes')
                         ->select('id','nPersonal','nombre','apellidoPaterno','apellidoMaterno','email')
-                    ->where('nPersonal','LIKE','%'.$search.'%')
-                    ->orWhere('nombre','LIKE','%'.$search.'%')
-                    ->orWhere('apellidoPaterno','LIKE','%'.$search.'%')
-                    ->orWhere('apellidoMaterno','LIKE','%'.$search.'%')
-                    ->orWhere('email','LIKE','%'.$search.'%')
-                    ->orderBy('nPersonal','asc')
-                    ->paginate(15)
+                        ->where('nPersonal','LIKE','%'.$search.'%')
+                        ->orWhere('nombre','LIKE','%'.$search.'%')
+                        ->orWhere('apellidoPaterno','LIKE','%'.$search.'%')
+                        ->orWhere('apellidoMaterno','LIKE','%'.$search.'%')
+                        ->orWhere('email','LIKE','%'.$search.'%')
+                        ->orderBy('nPersonal','asc')
+                        ->paginate(10)
+                        ->withQueryString()
                     ;
             }
 
@@ -103,7 +115,8 @@ class DocenteController extends Controller
 
     /**
      * Show the form for creating a new resource.
-     *
+     * Función para mostrar la vista
+     * @see resources/views/docente/create.blade.php
      * @return \Illuminate\Http\Response
      */
     public function create()
@@ -113,7 +126,8 @@ class DocenteController extends Controller
 
     /**
      * Store a newly created resource in storage.
-     *
+     * Si en algún momento se añade un nuevo atributo al Modelo
+     * @see Docente
      * @param  \App\Http\Requests\StoreDocenteRequest  $request
      * @return \Illuminate\Http\Response
      */
@@ -148,7 +162,7 @@ class DocenteController extends Controller
 
     /**
      * Show the form for editing the specified resource.
-     *
+     * Retorna las variables que se cargarán como apoyo en el formulario
      * @param  \App\Models\Docente  $docente
      * @return \Illuminate\Http\Response
      */
@@ -163,12 +177,12 @@ class DocenteController extends Controller
 
     /**
      * Update the specified resource in storage.
+     * Actualiza la información del docente
      *
      * @param  \App\Http\Requests\UpdateDocenteRequest  $request
      * @param  \App\Models\Docente  $docente
      * @return \Illuminate\Http\Response
      */
-    //public function update(UpdateDocenteRequest $request, $nPersonal)
     public function update(UpdateDocenteRequest $request, $id)
     {
         //$docente = Docente::where('nPersonal',$nPersonal)->firstOrFail();
@@ -198,11 +212,10 @@ class DocenteController extends Controller
 
     /**
      * Remove the specified resource from storage.
-     *
+     * Elimina al docente
      * @param  \App\Models\Docente  $docente
      * @return \Illuminate\Http\Response
      */
-    //public function destroy($nPersonal)
     public function destroy($id)
     {
         //$docente = Docente::where('nPersonal',$nPersonal)->firstOrFail();
@@ -216,35 +229,6 @@ class DocenteController extends Controller
         event(new LogUserActivity($user,"Eliminación de Docente ID $docente->nPersonal",$data));
 
         return redirect()->route('docente.index');
-
-    }
-    /**
-     * Genera el archivo pdf, a partir de la vista proporcioanda
-     * https://github.com/barryvdh/laravel-dompdf
-     * @return \Illuminate\Http\Response
-     */
-    public function export()
-    {
-        //images
-        $path = base_path('public/images/uv.png');
-        $type = pathinfo($path, PATHINFO_EXTENSION);
-        $data = file_get_contents($path);
-        $uv = 'data:image/'.$type.';base64'.base64_encode($data);
-
-        $listaDocentes = Docente::all();
-        $pdf = Pdf::loadView('pdf.template', compact(
-                'listaDocentes', 'uv')
-        );
-
-        $user = Auth::user();
-        $data = "Generación de Reporte de Docentes";
-        event(new LogUserActivity($user,"Generación de Reporte de Docentes",$data));
-
-        //lo muestra en el navegador
-        return $pdf->stream();
-        //descarga directa
-        //return $pdf->download('Docentes.pdf');
-        //return view('pdf.template',['docentes' => $listaDocentes]);
 
     }
 

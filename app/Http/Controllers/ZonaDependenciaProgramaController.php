@@ -36,7 +36,9 @@ class ZonaDependenciaProgramaController extends Controller
             ->orWhere('horasUtilizadas','LIKE','%'.$search.'%')
             ->orWhere('horasDisponibles','LIKE','%'.$search.'%')
             ->orderBy('id_zona','asc')
-            ->paginate(15);
+            ->paginate(15)
+            ->withQueryString()
+        ;
 
         return view('zonaDependenciaPrograma.index', compact('listaZonaDependenciaPrograma','search'));
     }
@@ -125,8 +127,8 @@ class ZonaDependenciaProgramaController extends Controller
         $listaDependencias = Zona_Dependencia::all()->where('id_zona',$zonaProgramaSeleccionado);
 
         return view('zonaDependenciaPrograma.edit', ['programa' => $programa,
-                                                          'zonas' => $listaZonas,
-                                                          'dependencias' => $listaDependencias]);
+            'zonas' => $listaZonas,
+            'dependencias' => $listaDependencias]);
 
     }
 

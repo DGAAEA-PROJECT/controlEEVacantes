@@ -27,7 +27,9 @@ class TipoAsignacionController extends Controller
             ->where('tipo','LIKE','%'.$search.'%')
             ->orWhere('descripcion','LIKE','%'.$search.'%')
             ->orderBy('tipo','asc')
-            ->paginate(15);
+            ->paginate(10)
+            ->withQueryString()
+        ;
 
         if(isset($radioButton)){
 
@@ -38,7 +40,8 @@ class TipoAsignacionController extends Controller
                         ->select('id','tipo','descripcion')
                         ->where('tipo','LIKE','%'.$search.'%')
                         ->orderBy('tipo', 'asc')
-                        ->paginate(15)
+                        ->paginate(10)
+                        ->withQueryString()
                     ;
                     break;
 
@@ -47,7 +50,8 @@ class TipoAsignacionController extends Controller
                         ->select('id','tipo','descripcion')
                         ->where('descripcion','LIKE','%'.$search.'%')
                         ->orderBy('descripcion', 'asc')
-                        ->paginate(15)
+                        ->paginate(10)
+                        ->withQueryString()
                     ;
                     break;
 
@@ -57,7 +61,8 @@ class TipoAsignacionController extends Controller
                         ->where('tipo','LIKE','%'.$search.'%')
                         ->orWhere('descripcion','LIKE','%'.$search.'%')
                         ->orderBy('tipo','asc')
-                        ->paginate(15)
+                        ->paginate(10)
+                        ->withQueryString()
                     ;
             }
 
@@ -168,4 +173,3 @@ class TipoAsignacionController extends Controller
     }
 
 }
-

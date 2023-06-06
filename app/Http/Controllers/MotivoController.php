@@ -28,7 +28,9 @@ class MotivoController extends Controller
             ->orWhere('nombre','LIKE','%'.$search.'%')
             ->orWhere('concepto','LIKE','%'.$search.'%')
             ->orderBy('numeroMotivo','asc')
-            ->paginate(15);
+            ->paginate(10)
+            ->withQueryString()
+        ;
 
         if(isset($radioButton)){
 
@@ -39,7 +41,8 @@ class MotivoController extends Controller
                         ->select('id','numeroMotivo','nombre','concepto')
                         ->where('numeroMotivo','LIKE','%'.$search.'%')
                         ->orderBy('numeroMotivo', 'asc')
-                        ->paginate(15)
+                        ->paginate(10)
+                        ->withQueryString()
                     ;
                     break;
 
@@ -48,7 +51,8 @@ class MotivoController extends Controller
                         ->select('id','numeroMotivo','nombre','concepto')
                         ->where('nombre','LIKE','%'.$search.'%')
                         ->orderBy('nombre', 'asc')
-                        ->paginate(15)
+                        ->paginate(10)
+                        ->withQueryString()
                     ;
                     break;
 
@@ -57,7 +61,8 @@ class MotivoController extends Controller
                         ->select('id','numeroMotivo','nombre','concepto')
                         ->where('concepto','LIKE','%'.$search.'%')
                         ->orderBy('concepto', 'asc')
-                        ->paginate(15)
+                        ->paginate(10)
+                        ->withQueryString()
                     ;
                     break;
 
@@ -68,7 +73,8 @@ class MotivoController extends Controller
                         ->orWhere('nombre','LIKE','%'.$search.'%')
                         ->orWhere('concepto','LIKE','%'.$search.'%')
                         ->orderBy('numeroMotivo','asc')
-                        ->paginate(15)
+                        ->paginate(10)
+                        ->withQueryString()
                     ;
             }
 

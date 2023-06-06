@@ -25,6 +25,7 @@ class PeriodoController extends Controller
             ->orWhere('clavePeriodo','LIKE','%'.$search.'%')
             ->orWhere('descripcion','LIKE','%'.$search.'%')
             ->paginate(10)
+            ->withQueryString()
         ;
 
         if(isset($radioButton)){
@@ -36,7 +37,8 @@ class PeriodoController extends Controller
                         ->select('id','nPeriodo', 'clavePeriodo','descripcion')
                         ->where('nPeriodo','LIKE','%'.$search.'%')
                         ->orderBy('nPeriodo', 'desc')
-                        ->paginate(15)
+                        ->paginate(10)
+                        ->withQueryString()
                     ;
                     break;
 
@@ -45,7 +47,8 @@ class PeriodoController extends Controller
                         ->select('id','nPeriodo', 'clavePeriodo','descripcion','actual')
                         ->where('clavePeriodo','LIKE','%'.$search.'%')
                         ->orderBy('clavePeriodo', 'desc')
-                        ->paginate(15)
+                        ->paginate(10)
+                        ->withQueryString()
                     ;
                     break;
 
@@ -54,7 +57,8 @@ class PeriodoController extends Controller
                         ->select('id','nPeriodo', 'clavePeriodo','descripcion','actual')
                         ->where('descripcion','LIKE','%'.$search.'%')
                         ->orderBy('descripcion', 'desc')
-                        ->paginate(15)
+                        ->paginate(10)
+                        ->withQueryString()
                     ;
                     break;
 
@@ -65,6 +69,7 @@ class PeriodoController extends Controller
                         ->orWhere('clavePeriodo','LIKE','%'.$search.'%')
                         ->orWhere('descripcion','LIKE','%'.$search.'%')
                         ->paginate(10)
+                        ->withQueryString()
                     ;
 
             }
@@ -114,9 +119,9 @@ class PeriodoController extends Controller
         $descripcion = $request->descripcion;
 
         $periodo->update([
-           'nPeriodo'=>$nPeriodo,
-           'clavePeriodo'=>$clavePeriodo,
-           'descripcion'=>$descripcion,
+            'nPeriodo'=>$nPeriodo,
+            'clavePeriodo'=>$clavePeriodo,
+            'descripcion'=>$descripcion,
         ]);
 
         $user = Auth::user();
@@ -165,28 +170,28 @@ class PeriodoController extends Controller
 
         }
 
-/*        $periodo->update([
-            //'actual'=>$actual,
-            'actual'=>$valBo,
-        ]);*/
+        /*        $periodo->update([
+                    //'actual'=>$actual,
+                    'actual'=>$valBo,
+                ]);*/
 
-/*        $periodoID = DB::table('periodos')
-            ->select('id')
-            ->where('id','=',$id)
-            ->value('id')
-            ;*/
+        /*        $periodoID = DB::table('periodos')
+                    ->select('id')
+                    ->where('id','=',$id)
+                    ->value('id')
+                    ;*/
 
         //dd($periodoID);
         //$aPeriodo = str_split($periodoID);
         //$iPeriodo = (integer) $periodoID;
 
-/*        $otrosPeriodos = Db::table('periodos')
-                         ->whereNotIn('id',$aPeriodo)
-                         ->update([
-                             'actual' => false,
-                         ])
+        /*        $otrosPeriodos = Db::table('periodos')
+                                 ->whereNotIn('id',$aPeriodo)
+                                 ->update([
+                                     'actual' => false,
+                                 ])
 
-                         ;*/
+                                 ;*/
 
 
         $user = Auth::user();
