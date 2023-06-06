@@ -113,13 +113,8 @@
 
                         <td class="py-4 px-6">
 
-                            {{--@if($vacante->archivo != null)--}}
                             @if( $vacante->archivo != "Inexistente" )
-                                {{--
-                                <a target="_blank" href="https://filesdgaaea.blob.core.windows.net/files/{{$vacante->archivo}}" class="font-medium text-blue-600 underline dark:text-blue-500 hover:no-underline">
-                                    <img src="{{asset('images/file.png')}}" alt="">
-                                </a>
-                                --}}
+
 
                                 <?php
                                 $path = "vac-{$vacante->id}";
@@ -143,7 +138,7 @@
 
                                     @else
 
-                                    <a target="_blank" href="https://filesdgaaea.blob.core.windows.net/files/{{$file["name"]}}" class="font-medium text-blue-600 underline dark:text-blue-500 hover:no-underline">
+                                    <a target="_blank" href="https://gestionvacantes.blob.core.windows.net/files/{{$file["name"]}}" class="font-medium text-blue-600 underline dark:text-blue-500 hover:no-underline">
                                         <img src="{{asset('images/file.png')}}" alt="{{$file["name"]}}" title="{{$file["name"]}}">
                                     </a>
                                     <br>
