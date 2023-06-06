@@ -263,7 +263,7 @@ class ZonaDependenciaController extends Controller
         })
             ->where(function ($query) {
                 //$query->whereNull('numPersonalDocente');
-                $query->whereNull('nombreDocente');
+                $query->where('nombreDocente','');
             })
             ->get();
 
