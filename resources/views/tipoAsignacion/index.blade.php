@@ -119,6 +119,7 @@
             @endif
             </tbody>
         </table>
+        {{ $tiposAsignacion->links() }}
     </div>
 </div>
 
