@@ -48,7 +48,7 @@
                         <label class="labelForms">Número de materia: {{$vacante->numMateria}}</label>
                     </div>
                     <div class="col-span-6">
-                        <label class="labelForms">Grupo: {{$vacante->grupo}}</label>
+                        <label class="labelForms">NRC: {{$vacante->grupo}}</label>
                     </div>
                     <div class="col-span-6">
                         <label class="labelForms">Sub Grupo: {{$vacante->subGrupo}}</label>

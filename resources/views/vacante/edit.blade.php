@@ -169,20 +169,22 @@
 
                                 @include('vacante.selectNrcNombreEdit')
 
+                                {{--
                                 <div class="col-span-6 sm:col-span-2 lg:col-span-2">
                                     <label for="grupo" class="labelForms">Grupo</label>
                                     <input type="text" name="grupo" id="grupo" class="inputForms"
                                            required
                                            value="{{$vacante->grupo}}">
                                 </div>
-
+                                --}}
+                                {{--
                                 <div class="col-span-6 sm:col-span-2 lg:col-span-2">
                                     <label for="subGrupo" class="labelForms">Sub Grupo</label>
                                     <input type="text" name="subGrupo" id="subGrupo" class="inputForms"
-                                           required
-                                           value="{{$vacante->subGrupo}}">
+                                           readonly="readonly"
+                                           value="0">
                                 </div>
-
+                                --}}
                                 <div class="col-span-6 sm:col-span-2 lg:col-span-2">
                                     <label for="numPlaza" class="labelForms">Número de plaza</label>
                                     <input type="number" name="numPlaza" id="numPlaza" class="inputForms"
