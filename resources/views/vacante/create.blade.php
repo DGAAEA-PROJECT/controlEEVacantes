@@ -157,7 +157,8 @@
 
                                     <div class="col-span-6 sm:col-span-2 lg:col-span-2">
                                         <label for="tipoAsignacion" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Tipo de Asignación</label>
-                                        <select  id="tipoAsignacion" name="tipoAsignacion" class="estiloSelect" required>
+                                        {{--<select  id="tipoAsignacion" name="tipoAsignacion" class="estiloSelect" required>--}}
+                                        <select  id="tipoAsignacion" name="tipoAsignacion" class="estiloSelect">
                                             <option value="">Selecciona el tipo de asignación</option>
                                             @foreach ($tiposAsignacion as $data)
                                                 <option value="{{$data->tipo}}">
