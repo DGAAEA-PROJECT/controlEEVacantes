@@ -142,14 +142,13 @@
                                                placeholder="Ej. SEC1"
                                                required>
                                     </div>
-
+                                    {{--
                                     <div class="col-span-6 sm:col-span-3 lg:col-span-3">
                                         <label for="subGrupo" class="labelForms">Sub Grupo</label>
                                         <input type="text" name="subGrupo" id="subGrupo" class="inputForms"
-                                               placeholder="Ej. 19"
-                                               required>
+                                               value="0" readonly="readonly">
                                     </div>
-
+                                    --}}
                                     <div class="col-span-6">
                                         <label for="numMotivo" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Motivo</label>
                                         <select  id="numMotivo" name="numMotivo" class="estiloSelect">

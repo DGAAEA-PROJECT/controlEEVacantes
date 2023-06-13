@@ -3,8 +3,8 @@
     <select  id="numMateria-dropdown" name="numMateria" class="estiloSelect" required>
         <option value="">Selecciona la experiencia educativa</option>
         @foreach ($experienciasEducativas as $data)
-            <option value="{{$data->nrc}}~{{$data->nombre}}">
-                {{$data->nrc}}~{{$data->nombre}}
+            <option value="{{$data->numMateria}}~{{$data->nombre}}">
+                {{$data->numMateria}}~{{$data->nombre}}
             </option>
         @endforeach
     </select>
@@ -13,6 +13,12 @@
 <div class="col-span-6 sm:col-span-2 lg:col-span-2">
     <label for="numHoras-dropdown" class="block mb-2 text-sm  text-gray-900 dark:text-gray-400" >Número de horas</label>
     <select id="numHoras-dropdown" class="estiloSelect" name="numHoras">
+    </select>
+</div>
+
+<div class="col-span-6 sm:col-span-2 lg:col-span-2">
+    <label for="nrc-dropdown" class="block mb-2 text-sm  text-gray-900 dark:text-gray-400" >NRC</label>
+    <select id="nrc-dropdown" class="estiloSelect" name="grupo">
     </select>
 </div>
 
@@ -35,6 +41,7 @@
                 success: function (result) {
                     $.each(result.horasExperienciaEducativa, function (key, value) {
                         $("#numHoras-dropdown").html('<option value="' + value.horas + '">' + value.horas + '</option>');
+                        $("#nrc-dropdown").html('<option value="' + value.nrc + '">' + value.nrc + '</option>');
                     });
                 }
             });

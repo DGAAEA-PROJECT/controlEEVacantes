@@ -146,6 +146,7 @@ class VacanteController extends Controller
         }
 
         $zonas = Zona::all();
+        $periodoActual = DB::table('periodos')->where('actual','=','1')->value('descripcion');
 
         return view('vacante.index',compact(
             'vacantes',
@@ -161,7 +162,8 @@ class VacanteController extends Controller
             'nombreDependencia',
             'nombrePrograma',
             'listaDependenciasSelect',
-            'listaProgramasSelect'
+            'listaProgramasSelect',
+            'periodoActual'
         ));
     }
 
@@ -324,7 +326,8 @@ class VacanteController extends Controller
         $vacante->numMateria=$experienciaEducativaPartes[0];
         $vacante->nombreMateria=$experienciaEducativaPartes[1];
         $vacante->grupo=$request->grupo;
-        $vacante->subGrupo=$request->subGrupo;
+        //$vacante->subGrupo=$request->subGrupo;
+        $vacante->subGrupo=0;
         $vacante->numMotivo=$request->numMotivo;
         $vacante->tipoContratacion=$request->tipoContratacion;
         $vacante->tipoAsignacion=$request->tipoAsignacion;
@@ -369,7 +372,7 @@ class VacanteController extends Controller
 
         $user = Auth::user();
         $data = $request->periodo .  " " . $request->clavePeriodo . " " . $request->numZona . " " . $request->numDependencia . " " . $request->numPlaza
-            . " " . $request->numHoras . " " . $request->numMateria . " " . $request->nombreMateria . " " . $request->grupo . " " . $request->subGrupo
+            . " " . $request->numHoras . " " . $request->numMateria . " " . $request->nombreMateria . " " . $request->grupo
             . " " . $request->numMotivo . " " . $request->tipoAsignacion . " " . $request->numPersonalDocente . " " . $request->plan
             . " " . $request->observaciones . " " . " ". $request->fechaAviso . $request->fechaAsignacion . " " . $request->fechaApertura . " " . $request->fechaCierre . " " . $request->fechaRenuncia;
 
@@ -610,7 +613,8 @@ class VacanteController extends Controller
         $numMateria=$experienciaEducativaPartes[0];
         $nombreMateria=$experienciaEducativaPartes[1];
         $grupo=$request->grupo;
-        $subGrupo=$request->subGrupo;
+        //$subGrupo=$request->subGrupo;
+        $subGrupo=0;
         $numMotivo=$request->numMotivo;
         $tipoContratacion=$request->tipoContratacion;
         $tipoAsignacion=$request->tipoAsignacion;
@@ -705,7 +709,7 @@ class VacanteController extends Controller
         $user = Auth::user();
         //Concatenación de variables para mandarlo al event
         $data = $request->periodo .  " " . $request->clavePeriodo . " " . $request->numZona . " " . $request->numDependencia . " " . $request->numPlaza
-            . " " . $request->numHoras . " " . $request->numMateria . " " . $request->nombreMateria . " " . $request->grupo . " " . $request->subGrupo
+            . " " . $request->numHoras . " " . $request->numMateria . " " . $request->nombreMateria . " " . $request->grupo
             . " " . $request->numMotivo . " " . $request->tipoAsignacion . " " . $request->numPersonalDocente . " " . $request->plan
             . " " . $request->observaciones . " " . $request->fechaAsignacion . " " .$request->fechaApertura . " " . $request->fechaCierre . " " . $request->fechaRenuncia;
 
@@ -912,7 +916,7 @@ class VacanteController extends Controller
      */
     public function fetchHorasExperienciaEducativa(Request $request)
     {
-        $data['horasExperienciaEducativa'] = ExperienciaEducativa::where("nrc", $request->nrc)
+        $data['horasExperienciaEducativa'] = ExperienciaEducativa::where("numMateria", $request->nrc)
             ->get(["nrc","horas"]);
 
         return response()->json($data);
