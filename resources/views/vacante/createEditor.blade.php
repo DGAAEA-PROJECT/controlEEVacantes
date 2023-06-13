@@ -137,9 +137,9 @@
                                     @include('vacante.selectNrcNombreCreate')
 
                                     <div class="col-span-6 sm:col-span-3 lg:col-span-3">
-                                        <label for="grupo" class="labelForms">Grupo</label>
+                                        <label for="grupo" class="labelForms">NRC</label>
                                         <input type="text" name="grupo" id="grupo" class="inputForms"
-                                               placeholder="Ej. SEC1"
+                                               placeholder=""
                                                required>
                                     </div>
                                     {{--

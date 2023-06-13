@@ -26,7 +26,7 @@ class StoreExperienciaEducativaRequest extends FormRequest
     {
         return [
             'numMateria'=> 'unique:App\Models\ExperienciaEducativa,numMateria|required|numeric|min:1',
-            'nrc'=> 'unique:App\Models\ExperienciaEducativa,nrc|nullable|numeric|min:1',
+            //'nrc'=> 'unique:App\Models\ExperienciaEducativa,nrc|nullable|numeric|min:1',
             'nombre'=> 'required|string|min:1',
             'horas'=> 'required|string|min:1',
         ];
@@ -37,7 +37,7 @@ class StoreExperienciaEducativaRequest extends FormRequest
         return [
           'numMateria.required' => 'El número de la Experiencia Educativa es obligatorio',
           'numMateria.unique' => 'El número de materia ingresado ya ha sido registrado',
-          'nrc.unique' => 'El NRC ingresado ya ha sido registrado',
+          //'nrc.unique' => 'El NRC ingresado ya ha sido registrado',
           'nombre.required' => 'El nombre es obligatorio',
           'horas.required' => 'El número de horas es obligatorio',
         ];

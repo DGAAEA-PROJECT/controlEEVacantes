@@ -61,13 +61,13 @@
                                     <input type="number" name="numMateria" value="{{ old('numMateria') }}" id="numMateria" class="inputForms"
                                            placeholder="Ej. 15123" required>
                                 </div>
-
+                                {{--
                                 <div class="col-span-6">
                                     <label for="nrc" class="labelForms">NRC</label>
                                     <input type="number" name="nrc" value="{{ old('nrc') }}" id="nrc" class="inputForms"
                                            placeholder="Ej. 69477" required>
                                 </div>
-
+                                --}}
                                 <div class="col-span-6">
                                     <label for="nombre" class="labelForms">Nombre de la Experiencia Educativa</label>
                                     <input type="text" name="nombre" value="{{ old('nombre') }}" id="nombre" class="inputForms"

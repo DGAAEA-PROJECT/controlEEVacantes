@@ -107,14 +107,14 @@
 
                                     @include('vacante.selectNrcNombreCreate')
 
-                                    {{--
+
                                     <div class="col-span-6 sm:col-span-2 lg:col-span-2">
-                                        <label for="grupo" class="labelForms">Grupo</label>
+                                        <label for="grupo" class="labelForms">NRC</label>
                                         <input type="text" name="grupo" id="grupo" class="inputForms"
-                                               placeholder="Ej. SEC1"
+                                               placeholder=""
                                                required>
                                     </div>
-                                    --}}
+
                                     {{--
                                     <div class="col-span-6 sm:col-span-2 lg:col-span-2">
                                         <label for="subGrupo" class="labelForms">Sub Grupo</label>
