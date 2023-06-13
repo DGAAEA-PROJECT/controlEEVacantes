@@ -146,7 +146,7 @@ class VacanteController extends Controller
         }
 
         $zonas = Zona::all();
-        $periodoActual = DB::table('periodos')->where('actual','=','1')->value('descripcion');
+        //$periodoActual = DB::table('periodos')->where('actual','=','1')->value('descripcion');
 
         return view('vacante.index',compact(
             'vacantes',
@@ -163,7 +163,6 @@ class VacanteController extends Controller
             'nombrePrograma',
             'listaDependenciasSelect',
             'listaProgramasSelect',
-            'periodoActual'
         ));
     }
 
@@ -298,13 +297,27 @@ class VacanteController extends Controller
     public function store(StoreVacanteRequest $request)
     {
         $docenteCompleto = $request->numPersonalDocente;
-        $docentePartes = explode("-",$docenteCompleto);
+        /*$docentePartes = explode("-",$docenteCompleto);
         $nombreDocente= $docentePartes[0];
-        $numDocente = $docentePartes[1] ;
+        $numDocente = $docentePartes[1] ;*/
 
+        if (empty($docenteCompleto)){
+            $numDocente= "";
+            $nombreDocente= "";
+        }else{
+            $docentePartes = explode("-",$docenteCompleto);
+            $nombreDocente= $docentePartes[0];
+            $numDocente = $docentePartes[1];
+        }
+
+        /*
         if(empty($numDocente)){
             $numDocente= "";
         }
+        if(empty($nombreDocente)){
+            $nombreDocente= "";
+        }
+        */
 
         $periodoCompleto = $request->periodo;
         $periodoPartes = explode("-",$periodoCompleto);
@@ -572,9 +585,17 @@ class VacanteController extends Controller
         $vacante = Vacante::findOrFail($id);
 
         $docenteCompleto = $request->numPersonalDocente;
-        $docentePartes = explode("-",$docenteCompleto);
-        $nombreDocente= $docentePartes[0];
-        $numDocente = $docentePartes[1] ;
+        //$docentePartes = explode("-",$docenteCompleto);
+        //$nombreDocente= $docentePartes[0];
+        //$numDocente = $docentePartes[1] ;
+        if (empty($docenteCompleto)){
+            $numDocente= "";
+            $nombreDocente= "";
+        }else{
+            $docentePartes = explode("-",$docenteCompleto);
+            $nombreDocente= $docentePartes[0];
+            $numDocente = $docentePartes[1];
+        }
 
         //comparar docente y fechas actual en la vacante
         $numPersonalDocenteActual = $vacante->numPersonalDocente;
