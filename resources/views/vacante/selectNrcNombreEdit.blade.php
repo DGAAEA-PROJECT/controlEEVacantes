@@ -16,6 +16,11 @@
         <option value="{{$vacante->numHoras}}">{{$vacante->numHoras}}</option>
     </select>
 </div>
+<div class="col-span-6 sm:col-span-2 lg:col-span-2">
+    <label for="nrc-dropdown" class="block mb-2 text-sm  text-gray-900 dark:text-gray-400" >NRC</label>
+    <select id="nrc-dropdown" class="estiloSelect" name="grupo">
+    </select>
+</div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
@@ -36,6 +41,7 @@
                 success: function (result) {
                     $.each(result.horasExperienciaEducativa, function (key, value) {
                         $("#numHoras-dropdown").html('<option value="' + value.horas + '">' + value.horas + '</option>');
+                        $("#nrc-dropdown").html('<option value="' + value.nrc + '">' + value.nrc + '</option>');
                     });
                 }
             });
