@@ -35,14 +35,14 @@ class UpdateVacanteRequest extends FormRequest
             'subGrupo' => 'required|string|min:1',
             'numMotivo' => 'required|string|min:1',
             'tipoContratacion' => 'required|string|min:1',
-            'tipoAsignacion' => 'required|string|min:1',
+            //'tipoAsignacion' => 'required|string|min:1',
             'numPersonalDocente' => 'required|string|min:1',
             'plan' => 'nullable|numeric|min:1',
             'observaciones' => 'nullable|string|min:1',
-            'fechaAsignacion' => 'nullable|string|min:1',
-            'fechaApertura' => 'nullable|string|min:1',
-            'fechaCierre' => 'nullable|string|min:1',
-            'fechaRenuncia' => 'nullable|string|min:1',
+            //'fechaAsignacion' => 'nullable|string|min:1',
+            //'fechaApertura' => 'nullable|string|min:1',
+            //'fechaCierre' => 'nullable|string|min:1',
+            //'fechaRenuncia' => 'nullable|string|min:1',
         ];
     }
 
