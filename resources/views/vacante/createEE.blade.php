@@ -15,10 +15,6 @@
                         <input type="number" name="numMateria" id="numMateria" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="Ej. 15123" required>
                     </div>
                     <div>
-                        <label for="nrc" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">NRC</label>
-                        <input type="number" name="nrc" id="nrc" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="Ej. 69477" required>
-                    </div>
-                    <div>
                         <label for="nombre" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nombre de la experiencia educativa</label>
                         <input type="text" name="nombre" id="nombre" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="Ej. SERVICIO SOCIAL" required>
                     </div>

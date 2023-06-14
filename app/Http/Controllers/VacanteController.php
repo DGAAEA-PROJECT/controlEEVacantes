@@ -441,14 +441,15 @@ class VacanteController extends Controller
 
         $ee = new ExperienciaEducativa();
         $ee->numMateria = $request->numMateria;
-        $ee->nrc = $request->nrc;
+        //$ee->nrc = $request->nrc;
         $ee->nombre = $request->nombre;
         $ee->horas = $request->horas;
 
         $ee->save();
 
         $user = Auth::user();
-        $data = $request->numMateria ." " . $request->nrc ." ". $request->nombre ." ". $request->horas;
+        //$data = $request->numMateria ." " . $request->nrc ." ". $request->nombre ." ". $request->horas;
+        $data = $request->numMateria ." ". $request->nombre ." ". $request->horas;
         event(new LogUserActivity($user,"Creación de Experiencia Educativa",$data));
 
         return redirect()->back();
