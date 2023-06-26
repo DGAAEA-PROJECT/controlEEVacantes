@@ -31,7 +31,6 @@
                     <p class="mt-1 text-sm text-gray-600">Por favor ingresa los datos solicitados.</p><br>
                     <p><b>Recuerda que los datos obligatiorios son:</b></p>
                     <li>Número de Materia</li>
-                    <li>NRC</li>
                     <li>Nombre</li>
                     <li>Horas</li>
                 </div>
