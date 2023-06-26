@@ -364,7 +364,7 @@ class VacanteController extends Controller
 
         $request->validate([
             'files' => 'nullable',
-            'files.*' => 'mimes:pdf|max:2048'
+            'files.*' => 'mimes:pdf|max:20480'
         ]);
 
         if($request->hasFile('files')){
@@ -653,7 +653,7 @@ class VacanteController extends Controller
 
         $request->validate([
             'files' => 'nullable',
-            'files.*' => 'mimes:pdf|max:2048'
+            'files.*' => 'mimes:pdf|max:20480'
         ]);
 
         if($request->hasFile('files')){
