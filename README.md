@@ -69,3 +69,8 @@ Para realizar el despliegue o deployment se optó por Azure, debido a que Azure 
 
 - Videos para DGAAEA: https://www.youtube.com/playlist?list=PLkQwTdgiXHj6h7KiC7hZ-0h7h4IagCzxE
 - Videos para Facultad: https://www.youtube.com/playlist?list=PLkQwTdgiXHj5o4CIYSaXVx2xOz9XmSzxQ 
+
+## Tareas futuras
+
+- Que los usuarios puedan trabajar en periodos distintos.
+- Ajustar el límite de subida de archivos en el servidor para evitar el error 413 Request Entity Too Large.
