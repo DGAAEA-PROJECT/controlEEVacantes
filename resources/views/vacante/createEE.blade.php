@@ -11,8 +11,8 @@
                 <form class="space-y-6" action="{{ route('vacante.storeEe') }}" method="POST">
                     @csrf
                     <div>
-                        <label for="numMateria" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Número de materia</label>
-                        <input type="number" name="numMateria" id="numMateria" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="Ej. 15123" required>
+                        <label for="numMateria" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Código de materia</label>
+                        <input type="text" name="numMateria" id="numMateria" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="Ej. ISMI-38001" required>
                     </div>
                     <div>
                         <label for="nombre" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nombre de la experiencia educativa</label>

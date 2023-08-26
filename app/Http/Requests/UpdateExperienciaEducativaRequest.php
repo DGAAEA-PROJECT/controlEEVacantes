@@ -28,7 +28,7 @@ class UpdateExperienciaEducativaRequest extends FormRequest
             //'numMateria'=> 'unique:App\Models\ExperienciaEducativa,numMateria|required|numeric|min:1',
             'numMateria' => [
               'required',
-              'numeric',
+              'string',
               'min:1',
               Rule::unique('experiencia_educativas')->ignore($this->route('id')),
             ],

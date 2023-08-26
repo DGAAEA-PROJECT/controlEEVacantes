@@ -45,7 +45,7 @@
                         <label class="labelForms">Número de horas: {{$vacante->numHoras}}</label>
                     </div>
                     <div class="col-span-6">
-                        <label class="labelForms">Número de materia: {{$vacante->numMateria}}</label>
+                        <label class="labelForms">Código de materia: {{$vacante->numMateria}}</label>
                     </div>
                     <div class="col-span-6">
                         <label class="labelForms">NRC: {{$vacante->grupo}}</label>
