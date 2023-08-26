@@ -30,7 +30,7 @@
                     <h3 class="text-lg font-medium leading-6 text-gray-900">Actualizar Experiencia Educativa</h3>
                     <p class="mt-1 text-sm text-gray-600">Por favor ingresa los datos solicitados.</p><br>
                     <p><b>Recuerda que los datos obligatiorios son:</b></p>
-                    <li>Número de Materia</li>
+                    <li>Código de Materia</li>
                     <li>Nombre</li>
                     <li>Horas</li>
                 </div>
@@ -56,17 +56,11 @@
                                 @csrf
 
                                 <div class="col-span-6">
-                                    <label for="numMateria" class="labelForms">Número de Materia</label>
-                                    <input type="number" name="numMateria" id="numMateria" class="inputForms"
+                                    <label for="numMateria" class="labelForms">Código de Materia</label>
+                                    <input type="text" name="numMateria" id="numMateria" class="inputForms"
                                            required value="{{old('numMateria',$experienciaEducativa->numMateria)}}">
                                 </div>
-                                {{--
-                                <div class="col-span-6">
-                                    <label for="nrc" class="labelForms">NRC</label>
-                                    <input type="number" name="nrc" id="nrc" class="inputForms"
-                                           value="{{old('nrc',$experienciaEducativa->nrc)}}">
-                                </div>
-                                --}}
+
                                 <div class="col-span-6">
                                     <label for="nombre" class="labelForms">Nombre de la Experiencia Educativa</label>
                                     <input type="text" name="nombre" id="nombre" class="inputForms"
@@ -86,7 +80,7 @@
                     </div>
                 </form>
             </div>
-            </form>
+
         </div>
     </div>
 </div>
@@ -94,8 +88,6 @@
 <div class="hidden sm:block" aria-hidden="true">
     <div class="py-5">
     </div>
-</div>
-
 </div>
 
 </body>

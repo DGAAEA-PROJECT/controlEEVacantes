@@ -15,7 +15,8 @@ return new class extends Migration
     {
         Schema::create('experiencia_educativas', function (Blueprint $table) {
             $table->id();
-            $table->integer('numMateria')->unique();
+            //$table->integer('numMateria')->unique();
+            $table->text('codMateria')->unique();;
             $table->integer('nrc')->unique()->nullable();
             $table->text('nombre');
             $table->integer('horas');
