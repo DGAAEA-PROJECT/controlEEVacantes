@@ -10,6 +10,7 @@ Control de Experiencias Educativas Vacantes
 
 <p align="justify">
 El sitio web auxiliará al Área Académica Económico - Administrativa en el proceso de la gestión del control de las experiencias educativas vacantes, solicitadas por las diversas dependencias pertenecientes al área a lo largo del semestre.
+    
 </p>
 
 ## Requisitos
@@ -23,18 +24,18 @@ El sitio web auxiliará al Área Académica Económico - Administrativa en el pr
 - [Git](https://git-scm.com/downloads)
 - [Composer](https://getcomposer.org/download/)
 
-###### Ayuda adicional 
+###### Ayuda adicional
 [Cómo instalar y configurar SQL Server 2019](https://youtu.be/YOaC_TyOrdk)
 [Conectando SQLServer con Laravel](https://www.youtube.com/watch?v=Poj5Kz6zZIA)
 
-##### Opcional 
+##### Opcional
 - [PhpStorm](https://www.jetbrains.com/es-es/phpstorm/)
 
 ## Clonando el repositorio
 
 Una vez clonado el repositorio deberas hacer lo siguiente:
 
-1. Copiar el archivo env.example y renombrarlo como .env 
+1. Copiar el archivo env.example y renombrarlo como .env
 2. Ejecutar<b><i>php artisan key:generate</i></b>
 3. Instalar las dependencias de composer ejecutando <b><i>composer install</i></b>
 4. Instalar las dependencias de NPM ejecutando <b><i>npm install</i></b>
@@ -43,7 +44,7 @@ Una vez clonado el repositorio deberas hacer lo siguiente:
 7. Iniciar el servidor de Laravel ejecutando <b><i>php artisan serve</i></b>
 8. Iniciar el servidor de Node ejecutando <b><i>npm run dev</i></b>
 
-###### Ayuda adicional 
+###### Ayuda adicional
 [Introducción a Artisan](https://laravel.com/docs/9.x/artisan#introduction)
 [Comandos básicos de Artisan](https://jrgonzalez.es/guia-comandos-artisan)
 
