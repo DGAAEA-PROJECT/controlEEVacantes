@@ -10,6 +10,7 @@ Control de Experiencias Educativas Vacantes
 
 <p align="justify">
 El sitio web auxiliará al Área Académica Económico - Administrativa en el proceso de la gestión del control de las experiencias educativas vacantes, solicitadas por las diversas dependencias pertenecientes al área a lo largo del semestre.
+    
 </p>
 
 ## Requisitos
