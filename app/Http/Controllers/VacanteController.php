@@ -730,10 +730,12 @@ class VacanteController extends Controller
         //Obtener el usuario actual
         $user = Auth::user();
         //Concatenación de variables para mandarlo al event
-        $data = $request->periodo .  " " . $request->clavePeriodo . " " . $request->numZona . " " . $request->numDependencia . " " . $request->numPlaza
-            . " " . $request->numHoras . " " . $request->numMateria . " " . $request->nombreMateria . " " . $request->grupo
-            . " " . $request->numMotivo . " " . $request->tipoAsignacion . " " . $request->numPersonalDocente . " " . $request->plan
-            . " " . $request->observaciones . " " . $request->fechaAsignacion . " " .$request->fechaApertura . " " . $request->fechaCierre . " " . $request->fechaRenuncia;
+        $data = $request->periodo .  " " . $request->clavePeriodo . " " . $request->numZona . " " . 
+                $request->numDependencia . " " . $request->numPlaza . " " . $request->numHoras . " " . 
+                str_replace(' ', '',$request->numMateria) . " " . str_replace(' ', '',$request->nombreMateria) . " " . $request->grupo . " " . 
+                $request->numMotivo . " " . $request->tipoAsignacion . " " . $request->numPersonalDocente . " " . 
+                $request->plan . " " . $request->observaciones . " " . $request->fechaAsignacion . " " .
+                $request->fechaApertura . " " . $request->fechaCierre . " " . $request->fechaRenuncia;
 
         event(new LogUserActivity($user,"Actualización de Vacante ID $id ",$data));
 
