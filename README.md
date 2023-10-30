@@ -36,7 +36,7 @@ El sitio web auxiliará al Área Académica Económico - Administrativa en el pr
 Una vez clonado el repositorio deberas hacer lo siguiente:
 
 1. Copiar el archivo env.example y renombrarlo como .env
-2. Ejecutar<b><i>php artisan key:generate</i></b>
+2. Ejecutar <b><i>php artisan key:generate</i></b>
 3. Instalar las dependencias de composer ejecutando <b><i>composer install</i></b>
 4. Instalar las dependencias de NPM ejecutando <b><i>npm install</i></b>
 5. Crear la base de datos  <b><i>controleevacantes </i></b> en SQLServer.
